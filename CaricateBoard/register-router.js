@@ -9,7 +9,7 @@ const passwordHash = async (password) => {
     return await bcrypt.hash(password, Number(process.env.SALT));  
 };
 
-authRouter.get("/accounts",(req, res) => {
+authRouter.get("/accounts", async (req, res) => {
     if(accounts.length === 0) return res.json("There is no accounts");
     res.json(accounts);
 });
@@ -28,19 +28,16 @@ authRouter.post("/signUp", async (req, res) => {
     posts:[ 
   
     ],
-    frinds:[
+    friends:[
 
     ]
   };
   
   if(account.posts.length === 0) account.posts[account.id - 1] = "no posts shared yet on this account";
-  if(account.frinds.length === 0) account.posts[account.id - 1] = "no frinds added yet on this account";
+  if(account.friends.length === 0) account.friends[account.id - 1] = "no friends added yet on this account";
 
-  
   accounts.push(account);
-  res.json(account);
-  
-  
+  res.json(account);  
 });
 
 authRouter.post("/login", async (req,res) => {
@@ -52,6 +49,8 @@ authRouter.post("/login", async (req,res) => {
     if(!password) return res.status(400).json("Invalid Password");
 
     if (account.posts.length === 0) account.posts[account.id - 1] = "no posts shared yet on this account";
+    if (account.friends.length === 0) account.friends[account.id - 1] = "no friends added yet on this account";
+    
     res.json("login successfully");
 });
 

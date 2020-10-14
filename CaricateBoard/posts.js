@@ -1,8 +1,5 @@
-const posts = {
-//objects of { postId:nowTime   ,contant:""
-//                ,auther:userId,likes: {usersIds}}  
+const posts = [
 
-};
-
+];
 
 module.exports = posts;
