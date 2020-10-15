@@ -14,7 +14,7 @@ const accounts = [
     "email": "moh.g.ghazal@gmail.com",
     "password": "12345",
     "posts": [
-        "no posts shared yet on this account"
+        "p1"
     ]
     ,"friends":["no friends added yet on this account"]
 } 
