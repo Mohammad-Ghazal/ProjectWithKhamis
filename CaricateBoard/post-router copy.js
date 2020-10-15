@@ -34,7 +34,8 @@ authRouter.post("/create-new-post/:id", (req,res) => {
 });
 
 //TODO : handle this with new dataBase shape (edit abd remove options)
-authRouter.put("/edit-post/:id", (req, res) => {//have to edit form "posts" object not from account info any more
+authRouter.put("/edit-post/:id",//TODO: have to remove without owner id-----------1
+ (req, res) => {//have to edit form "posts" object not from account info any more
     if(accounts[req.params.id - 1].posts[0] === "no posts shared yet on this account") return res.json("There is no posts");
     const index = req.body.postID - 1;
     if(mainPosts[index] === undefined) return res.json("There is no post in that index");
@@ -43,7 +44,8 @@ authRouter.put("/edit-post/:id", (req, res) => {//have to edit form "posts" obje
     res.json(mainPosts[index].content);
 });
 
-authRouter.delete("/remove-post/:id", (req, res) => {  //have to remove from "posts" and from account info
+authRouter.delete("/remove-post/:id",//TODO: have to remove without owner id-----------1
+ (req, res) => {  //have to remove from "posts" and from account info
     if(accounts[req.params.id - 1].posts[0] === "no posts shared yet on this account") return res.json("There is no posts");
     const index = req.body.id - 1;
     mainPosts.splice(index, 1);
@@ -51,6 +53,9 @@ authRouter.delete("/remove-post/:id", (req, res) => {  //have to remove from "po
     accounts[req.params.id - 1].posts = mainPosts;
     res.json(mainPosts);
 });
+
+
+
 
 
 module.exports = authRouter;

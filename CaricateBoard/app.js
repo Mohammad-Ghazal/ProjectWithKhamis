@@ -1,5 +1,5 @@
 const registerRouter = require('./register-router');
-const postRouter = require("./post-router");
+const postRouter = require("./likes-router");
 const friendsRouter = require("./friends-router");
 const express = require("express");
 
