@@ -1,4 +1,5 @@
 const registerRouter = require('./register-router');
+const accountEditRouter = require("./account-edit-router");
 const postRouter = require("./post-router");
 const likesRouter = require("./likes-router");
 const friendsRouter = require("./friends-router");
@@ -11,6 +12,7 @@ const app = express();
 
 app.use(express.json());
 app.use(registerRouter);
+app.use(accountEditRouter);
 app.use(postRouter);
 app.use(likesRouter);
 app.use(friendsRouter);
