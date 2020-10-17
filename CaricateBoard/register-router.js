@@ -39,8 +39,8 @@ authRouter.post("/signUp", async (req, res) => {
     ]
   };
   
-  if(account.posts.length === 0) account.posts[account.id - 1] = "no posts shared yet on this account";
-  if(account.friends.length === 0) account.friends[account.id - 1] = "no friends added yet on this account";
+  // if(account.posts.length === 0) account.posts[account.id - 1] = "no posts shared yet on this account";
+  // if(account.friends.length === 0) account.friends[account.id - 1] = "no friends added yet on this account";
 
   accounts.push(account);
   res.json(account);  

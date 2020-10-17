@@ -15,7 +15,7 @@ app.use(registerRouter);
 app.use(accountEditRouter);
 app.use(postRouter);
 app.use(likesRouter);
-app.use(friendsRouter);
+app.use(friendsRouter.authRouter);
 
 
 const PORT = 3000 || process.env.PORT;
