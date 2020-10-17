@@ -24,13 +24,7 @@ authRouter.put("/like/:accountId/:postId", (req, res) => {
     }
   } else res.json("error");
 });
-{
-    77:{
-        friends:{11:{id:11}}
-        likes:['ali','amr']
 
-    }
-}
 const isPostExist = (postId) => {
   const posts = mainPosts.filter((post) => {
     return post.postId === postId;
